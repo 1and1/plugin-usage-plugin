@@ -3,8 +3,39 @@ Plugin Usage
 
 This Jenkins plugin gives you the possibility to analyze the usage of your installed Jenkins plugins.
 
+[![Build Status](https://jenkins.ci.cloudbees.com/job/plugins/job/plugin-usage-plugin/badge/icon)](https://jenkins.ci.cloudbees.com/job/plugins/job/plugin-usage-plugin/)
+
 * see [Jenkins wiki](https://wiki.jenkins-ci.org/display/JENKINS/Plugin+Usage+Plugin+(Community)) for detailed feature descriptions
 * use [JIRA](https://issues.jenkins-ci.org) to report issues / feature requests
+
+Development
+===========
+
+Start the local Jenkins instance:
+
+    mvn hpi:run
+
+
+How to install
+--------------
+
+Run
+
+	mvn clean package
+
+to create the plugin .hpi file.
+
+
+To install:
+
+1. copy the resulting ./target/plugin-usage-plugin.hpi file to the $JENKINS_HOME/plugins directory. Don't forget to restart Jenkins afterwards.
+
+2. or use the plugin management console (http://example.com:8080/pluginManager/advanced) to upload the hpi file. You have to restart Jenkins in order to find the plugin in the installed plugins list.
+
+Plugin releases
+---------------
+
+	mvn release:prepare release:perform
 
 Contributing to the Plugin
 ==========================
